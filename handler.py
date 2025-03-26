@@ -305,7 +305,8 @@ def handler(job):
         return {"error": "Input must be a dictionary"}
     
     # Extract required parameters
-    freight_data = job_input.get("freight_data")
+    freight_data_raw = job_input.get("freight_data")
+    freight_data= freight_data_raw.json()
     access_token = job_input.get("access_token")
     
     # Validate parameters
